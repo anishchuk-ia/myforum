@@ -38,7 +38,7 @@ def topic_detail(request, slug):
     # create new post
     if request.method == 'POST':
         if not request.user.is_authenticated():
-            return redirect(resolve_url('myforum:login')+'?next='+request.get_full_path())
+            return redirect(resolve_url('login')+'?next='+request.get_full_path())
         
         post = request.POST.get('post', '').strip()
         if len(post) > 0:
